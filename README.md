@@ -31,6 +31,28 @@ MiniSuffix.domain("www.careers.gov.sg")
 # => "careers.gov.sg"
 ```
 
+##Benchmark
+
+```
+# benchmark/bench.rb
+
+PublicSuffix.domain total allocated memsize: 6574255
+PublicSuffix.domain total retained memsize: 1133266
+MiniSuffix.domain total allocated memsize: 8000
+MiniSuffix.domain total retained memsize: 0
+
+Warming up --------------------------------------
+ PublicSuffix.domain     4.503k i/100ms
+   MiniSuffix.domain    77.107k i/100ms
+Calculating -------------------------------------
+ PublicSuffix.domain     47.521k (± 2.2%) i/s -    238.659k in   5.024541s
+   MiniSuffix.domain    875.595k (± 3.8%) i/s -      4.395M in   5.027237s
+
+Comparison:
+   MiniSuffix.domain:   875594.7 i/s
+ PublicSuffix.domain:    47521.2 i/s - 18.43x  slower
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
