@@ -4,7 +4,7 @@ require 'ffi'
 module MiniSuffix
   extend FFI::Library
 
-  ffi_lib 'psl'
+  ffi_lib File.expand_path('vendor/libpsl.so')
   attach_function :psl_builtin, [], :pointer
   attach_function :psl_registrable_domain, [:pointer, :string], :string
   attach_function :psl_get_version, [], :string
