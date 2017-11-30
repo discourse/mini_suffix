@@ -4,7 +4,11 @@ require 'ffi'
 module MiniSuffix
   extend FFI::Library
 
-  ffi_lib File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.so')
+  ffi_lib [
+    File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.so'),
+    File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.dylib'),
+  ]
+
   attach_function :psl_builtin, [], :pointer
   attach_function :psl_registrable_domain, [:pointer, :string], :string
   attach_function :psl_get_version, [], :string
