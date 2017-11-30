@@ -1,0 +1,3 @@
+[submodule "libpsl"]
+	path = libpsl
+	url = https://github.com/rockdaboot/libpsl.git
