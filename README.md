@@ -30,7 +30,7 @@ MiniSuffix.domain("www.careers.gov.sg")
 # => "careers.gov.sg"
 ```
 
-##Benchmark
+## Benchmark
 
 ```
 # benchmark/bench.rb
