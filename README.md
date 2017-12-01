@@ -3,7 +3,6 @@
 ## Installation
 
 ### Debian
-`sudo apt-get install libpsl-dev`
 
 Add this line to your application's Gemfile:
 
