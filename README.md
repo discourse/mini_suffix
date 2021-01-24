@@ -58,6 +58,15 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Updating libpsl
+
+Libpsl binaries are bundled with the gem. The current version is checked out as a submodule in `./libpsl/`. To update, checkout a later commit
+in the submodule (ideally matching an upstream release tag). You will then need to rebuild the binaries for all architectures. This requires running `./build-libpsl.sh` in each environment. Depending on your setup, you may be able to accomplish that via virtual machines and/or Docker.
+
+Check the comments in `./build-libpsl.sh` for more information.
+
+The submodule bump and updated binaries should be checked in to the repository.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/discourse/mini_suffix.
