@@ -5,6 +5,7 @@ module MiniSuffix
   extend FFI::Library
 
   ffi_lib [
+    File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.aarch64.so'),  
     File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.x86_64.so'),  
     File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.ppc64le.so'),
     File.join(File.dirname(File.expand_path('..', __FILE__)), 'vendor/libpsl.darwin-i386.dylib'),
