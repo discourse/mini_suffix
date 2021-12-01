@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - main
 
 jobs:
   build:
@@ -32,3 +33,17 @@ jobs:
           bundle install --jobs 4
       - name: Tests
         run: bundle exec rspec
+  publish:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Release Gem
+        uses: discourse/publish-rubygems-action@v2
+        env:
+          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+          GIT_EMAIL: team@discourse.org
+          GIT_NAME: discoursebot
