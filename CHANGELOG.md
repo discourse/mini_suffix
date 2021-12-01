@@ -1,3 +1,9 @@
+# 0.3.3
+
+* Add libpsl shared libary for Linux aarch64
+
+  *xfalcox*
+
 # 0.3.2
 
 * Bump libpsl to v0.21.1, and bump binaries
